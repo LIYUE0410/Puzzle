@@ -154,16 +154,16 @@ void timeCallback(TimerID timer)
 
  SceneID game_init()
 {
-	scene = createScene("퍼즐 맞추기 게임", "Images/background.png");
+	scene = createScene("퍼즐 맞추기 게임", "background.png");
 
 
 	char path[50];
 	for (int i = 0; i < 16; i++) {
-		sprintf(path, "Images/%d.png", i + 1);
+		sprintf(path, "%d.png", i + 1);
 		game_board[i] = createObject(path, scene, indexToX(i), indexToY(i));
 		original_board[i] = game_board[i];
 	}
-	start = createObject("Images/start.png", scene, 642, 60);
+	start = createObject("start.png", scene, 642, 60);
 
 	timer = createTimer(timeValue);
 
